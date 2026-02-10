@@ -58,9 +58,9 @@
 2. open S0_ConvertBDFtoSet_and_Preprocess_for_Syncing.m
 3. Open eeglab
 4. Load all raw set files into eeglab
-	- ![[readme draft-1.png]]
+	- ![readme draft-1.png]
 5. Select the first dataset
-	- ![[readme draft-2.png]]
+	- ![](readme draft-2.png)
 6. If preprocessing BDF files,
 - code blocks for commands
 #### (Include example images of plots/outputs)
