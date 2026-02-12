@@ -57,12 +57,28 @@
 1. Open MATLAB and Set current folder to be the folder with S0_ConvertBDFtoSet_and_Preprocess_for_Syncing.m
 2. open S0_ConvertBDFtoSet_and_Preprocess_for_Syncing.m
 3. Open eeglab
-4. Load all raw set files into eeglab
-	- ![Load raw set files](images/readme-draft-1.png)
-5. Select the first dataset
-	- ![Select first dataset](images/readme-draft-2.png)
-6. If preprocessing BDF files,
-- code blocks for commands
+#### Import .set files manually
+1. put all .set files into one folder
+2. In EEGLAB: File>Load Existing datasets>Select all .set files
+### S0
+- after loading .set files, run `S0_ConvertBDFtoSet_and_Preprocess_for_Syncing
+- This script filters and preforms ICA on the datasets
+- This script will create a folder called `0_OutputSets`
+	- Within that folder, a subfolder will be created every time you run the script
+	- a version of each .set file be saved after each step
+### S1_SyncEEGSet_to_AttentionCsv.m
+#### Set-up
+1. put all behavior task .csvs into folder: `1_All_Data_For_Syncing` along with the output .set files from S0
+	1.  make sure that the first four chracters of each .set file matches the first four characters of the corresponding behavior .csv file. e.g.:
+		- ![[code sharing - preprocessing - MATLAB-4.png]]
+2. Run script: S1_SyncEEGSet_to_AttentionCsv
+- synced .set files are saved in this folder: `1_Synced_Outputs`
+### S2_LoadEEG_CheckSync.m
+- Loads synced .set files into eeglab
+-  checks how well each eeg file syncs to behavior data
+- saves outputs to `'2_CheckSync_Outputs';`
+### S4_All_Subject_NoCut_NoNotch
+- Looks for and loads synced EEG data from `'2_CheckSync_Outputs';`
 #### (Include example images of plots/outputs)
 ## Authors
 Contributors names and contact info
