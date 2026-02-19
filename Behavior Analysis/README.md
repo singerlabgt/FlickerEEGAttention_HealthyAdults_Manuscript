@@ -1,17 +1,14 @@
-# SensoryFx_Attention_Task_Analysis
-Attention Task Analysis for Young Adult EEG Flicker Study (Matty) 
+# Attention Task Analysis
+Analysis Pipeline for Psychomotor Vigilance (PVT) from Young Adult EEG Flicker Study
 
 ## Project Background: 
-
-The goal of this project is to understand the influence of gamma stimulation (40Hz) on healthy young adults. There are three experimental groups: random, gamma, and light groups that help in testing this. These groups are adminstered audiovisual stimulation correlating to each group in order to understand any impacts gamma audiovisual stimulation induces. 
-
+This repository contains code used to analyze behavior from a psychomotor vigilance task (PVT) completed during a 1‑hour flicker stimulation session in a young adult EEG study. The analysis focuses on accuracy, reaction time (RT), and reaction‑time variability (RTV), with comparisons across three stimulation groups.
 ## Overview: 
-For this specific code, the end goal is to create figures that showcase key information from the Attention Task. This is the period of 1 hour stimulation in which the participant is completing the dot task. These figures share key information about the accuracy, reaction time, and reaction time variability in order to compare the three stimulation groups. 
-
+The goal of this codebase is to generate figures and summary statistics that characterize performance during the Attention Task. These outputs include group‑level violin plots, scatterplots, streak‑based metrics, and statistical test results.
 ### Project Files Description: 
 **File 1 - dataframe_creation: **
 
-This specific piece of code generates the dataframe that hosues all of the key information used in future code. A key factor of the code that can be changed is the dates for old and new cohorts in order to specify changes in the gamma group.  
+This specific piece of code generates the dataframe that houses all of the key information used in future code. A key factor of the code that can be changed is the dates for old and new cohorts in order to specify changes in the gamma group.  
 
 **File 2 - plot_creation_for_AttentionTask:**
 
@@ -36,12 +33,9 @@ RTvsAcc_scatter:
 ![231204-131332- ACCvsRTscatter](https://github.com/singerlabgt/SensoryFx_Attention_Task_Analysis/assets/133933250/4b4b4d9a-218d-4a07-a24f-ecc865ce7240)
 
 
-
 **File 3 - Acc_RT_Overlay_for_onefolder**
 
-
 **File 4 - Window_Size_Violin_by_group_for_onefolder**
-
 
 **File 5 - MaxStreak**
 
@@ -78,17 +72,40 @@ This is the file that calls all of the various functions listed above and genera
 
 ## Getting Started: 
 ### Dependencies: 
-packages: matplotlib, numpy, pandas, seaborn, scipy, datetime, textwrap3, itertools, colorbrewer, os
-python version: run using 3.10 - can work for other versions 
-### Installation:
-install all of the files into one folder in Project_FlickerHealthyYoungAdults\EEG Data Analysis\Attention Task and then make clone the repository in a sepearte folder, this is because of the location of the DataSubset, you could also copy over the datasubset from this file and then create this in a new folder where two folders up the data subset is there
+packages: 
+- matplotlib
+- numpy
+- pandas
+- seaborn
+- scipy
+- datetime
+- textwrap3
+- itertools
+- colorbrewer
+- os
 
+Verified with Python 3.10, but likely compatible with other versions.
+### Installation:
+1. Clone the repository.
+2. Ensure all project files are in the same main directory.
+3. The code expects a specific relative path to the DataSubset directory. You may either:
+ - keep the folder structure as in the repo, or
+ - copy the existing DataSubset into your working directory (two levels above expected pathname).
 When running the code, some key changes that may need to be made include the cohort date is this changes fro dividing old from new, the pkl file used to ensure you have the proper data, the accuracy cut if desired
 
-### Executing Program: 
-to run this code you just need to run AllFigs and this file will call the other scripts to create all of the figures seen above 
+### Running the Program
+To generate all figures, run: 
+`python AllFigs.py`
 
-### Example Figures 
+This script will automatically call:
+- dataframe creation
+- plotting functions
+- streak calculations
+- statistical testing
+
+All outputs are saved into the specified results folder.
 
 ### Authors
-Matty. Sindhu, Shangze
+ - Matthew Attokaren
+ - Sindhura Mettupalli
+ - Shangze Lyu
