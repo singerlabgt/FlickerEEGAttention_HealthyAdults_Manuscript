@@ -5,6 +5,42 @@ Analysis Pipeline for Psychomotor Vigilance (PVT) from Young Adult EEG Flicker S
 This repository contains code used to analyze behavior from a psychomotor vigilance task (PVT) completed during a 1‑hour flicker stimulation session in a young adult EEG study. The analysis focuses on accuracy, reaction time (RT), and reaction‑time variability (RTV), with comparisons across three stimulation groups.
 ## Overview: 
 The goal of this codebase is to generate figures and summary statistics that characterize performance during the Attention Task. These outputs include group‑level violin plots, scatterplots, streak‑based metrics, and statistical test results.
+
+## Getting Started: 
+### Dependencies: 
+packages: 
+- matplotlib
+- numpy
+- pandas
+- seaborn
+- scipy
+- datetime
+- textwrap3
+- itertools
+- colorbrewer
+- os
+
+Verified with Python 3.10, but likely compatible with other versions.
+### Installation:
+1. Clone the repository.
+2. Ensure all project files are in the same main directory.
+3. The code expects a specific relative path to the DataSubset directory. You may either:
+ - keep the folder structure as in the repo, or
+ - copy the existing DataSubset into your working directory (two levels above expected pathname).
+When running the code, some key changes that may need to be made include the cohort date is this changes fro dividing old from new, the pkl file used to ensure you have the proper data, the accuracy cut if desired
+
+### Running the Program
+To generate all figures, run: 
+`python AllFigs.py`
+
+This script will automatically call:
+- dataframe creation
+- plotting functions
+- streak calculations
+- statistical testing
+
+All outputs are saved into the specified results folder.
+
 ### Project Files Description: 
 **File 1 - dataframe_creation: **
 
@@ -69,41 +105,6 @@ This file runs a complete stat analysis and generates the product in a text file
 **File 7 - AllFigs:** 
 
 This is the file that calls all of the various functions listed above and generates all of the figures in one folder. This is the file you run when actually generating the figures and where you can comment out certain graphs you don't want made. 
-
-## Getting Started: 
-### Dependencies: 
-packages: 
-- matplotlib
-- numpy
-- pandas
-- seaborn
-- scipy
-- datetime
-- textwrap3
-- itertools
-- colorbrewer
-- os
-
-Verified with Python 3.10, but likely compatible with other versions.
-### Installation:
-1. Clone the repository.
-2. Ensure all project files are in the same main directory.
-3. The code expects a specific relative path to the DataSubset directory. You may either:
- - keep the folder structure as in the repo, or
- - copy the existing DataSubset into your working directory (two levels above expected pathname).
-When running the code, some key changes that may need to be made include the cohort date is this changes fro dividing old from new, the pkl file used to ensure you have the proper data, the accuracy cut if desired
-
-### Running the Program
-To generate all figures, run: 
-`python AllFigs.py`
-
-This script will automatically call:
-- dataframe creation
-- plotting functions
-- streak calculations
-- statistical testing
-
-All outputs are saved into the specified results folder.
 
 ### Authors
  - Matthew Attokaren

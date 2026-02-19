@@ -1,13 +1,9 @@
 # FlickerEEGAttention_HealthyAdults_Manuscript
 ## Project Background
-- EEG and behavior analysis code for the flicker study with healthy young adults.
-## Overview
-- Summary Visual (if applicable)
-- Brief description of the goals of the project (what this code does)
+This repository contains EEG and behavioral analysis code for the flicker stimulation study conducted with healthy young adults. The workflow includes EEG preprocessing, synchronization of EEG with behavioral task data, analysis of attention‑task performance, and generation of manuscript figures.
+
 ## Project Files Description
 ### Analysis Files
-#### Behavior Analysis
-- __.py
 #### EEG Preprocessing
 - S0_ConvertBDFtoSet_and_Preprocess_for_Syncing.m
 	- Converts .bdf EEG file into a .set file
@@ -18,15 +14,9 @@
 - S4_ALLSubjects_NoCut_NoNotch_2_100hz.m
 
 ### Data
-#### raw data
-- location: insert OpenNeuro link
-	- format: BIDS
-#### processed data
-- location: 
-- format: stored in the Singer Lab data format as .mat
-- analysis code and results:
-	-  location: this folder, /ad.gatech.edu/bme/labs/singer/YourName/ProjectName
-	- sub folders: -doc/ - documentation files results/ - output figures and intermediary data structures requirements.txt - software requirements for the project project-name/ - analysis code related to the project
+#### Raw data
+- location:https://openneuro.org/datasets/ds006222
+	- format: BIDS‑formatted dataset
 
 ## Getting Started
 ### Dependencies
@@ -48,9 +38,9 @@
 		- firfilt
 		- zapline-plus1.2.1`
 ### Installation/Set-up
-- How/where to download your program
-- Any modifications needed to be made to files/folders
-	- e.g. How to set-up folder structure.  Where should sample data be located?
+ - Download this repository to your local machine.
+ - Place all raw .set files into one folder
+ - Confirm that all required MATLAB toolboxes and EEGLAB extensions are installed.
 ### Executing program
 - place channel locations file, "32BioSemiChannelCoordinates.ced", in a folder calls "Functions"
 #### Preprocessing steps
@@ -79,9 +69,10 @@
 - saves outputs to `'2_CheckSync_Outputs';`
 ### S4_All_Subject_NoCut_NoNotch
 - Looks for and loads synced EEG data from `'2_CheckSync_Outputs';`
-#### (Include example images of plots/outputs)
+
 ## Authors
-Contributors names and contact info
-## related papers
-(name et al., Title, Journal, Year)
+- Matthew Attokaren
+- Lu Zhang
+- Sindhura Mettupalli
+## Related Papers
 Attokaren et al., 40 Hz Audiovisual Stimulation Improves Sustained Attention and Related Brain Oscillations
